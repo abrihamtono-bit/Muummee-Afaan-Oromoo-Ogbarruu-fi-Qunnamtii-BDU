@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muummee Afaan Oromoo, Ogbarruufi Qunnamtii - Yuunivarsiitii Baahir Daar</title>
+    <style>
+        /* CSS Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1b4d3e, #2e7d32);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #e68900;
+        }
+
+        .content-section {
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #f4f6f5;
+        }
+
+        .section-container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-container h2 {
+            color: #1b4d3e;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: #1b4d3e;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .card ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Sirna Galmee Barattoota Haaraa (Registration Section) */
+        .register-section {
+            padding: 80px 20px;
+            background-color: #eef2f1;
+            text-align: center;
+        }
+
+        .register-container {
+            width: 85%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .register-container h2 {
+            color: #1b4d3e;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .register-container p {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .register-form button {
+            background-color: #1b4d3e;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .register-form button:hover {
+            background-color: #2e7d32;
+        }
+
+        /* Admin Dashboard Section */
+        .admin-section {
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .admin-container {
+            width: 85%;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .admin-login-box {
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .admin-login-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .admin-login-box button {
+            background-color: #1b4d3e;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #admin-panel {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #1b4d3e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Sirna Qabxii Barattootaa (Student Grade Portal) */
+        .portal-section {
+            padding: 80px 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .portal-container {
+            width: 85%;
+            max-width: 700px;
+            margin: auto;
+            background: #fdfdfd;
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .portal-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .portal-form button {
+            background-color: #1b4d3e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        #result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-radius: 5px;
+            display: none;
+            text-align: left;
+        }
+
+        /* Qunnamtii Section */
+        .contact-section {
+            padding: 80px 20px;
+            background-color: #f4f6f5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #1b4d3e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #1b4d3e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 4px 6px;
+            }
+            .grid-2, .form-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mata Duree fi Navigeshinii -->
+    <header>
+        <div class="container">
+            <div class="logo">Afaan Oromoo, Ogbarruufi Qunnamtii BDU</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Seensa</a></li>
+                    <li><a href="#services">Tajaajilota</a></li>
+                    <li><a href="#academics">Sagantaafi Ulaagaa</a></li>
+                    <li><a href="#careers">Carraa Hojii</a></li>
+                    <li><a href="#register">Galmee Haaraa</a></li>
+                    <li><a href="#admin">Admin</a></li>
+                    <li><a href="#portal">Qabxii</a></li>
+                    <li><a href="#contact">Qunnamtii</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fuula Jalqabaa Guddicha (Hero Section) -->
+    <section id="home" class="hero">
+        <h1>Muummee Afaan Oromoo, Ogbarruufi Qunnamtii</h1>
+        <p>Yuunivarsiitii Baahir Daar - Guddina afaan, aadaa, ogbarruu fi qunnamtiitiif tajaajila hawaasaa fi biyyaalessaa kennina.</p>
+        <a href="#register" class="btn">Amma Galmaa'aa</a>
+    </section>
+
+    <!-- Tajaajilota Gurguddoo -->
+    <section id="services" class="content-section">
+        <div class="section-container">
+            <h2>Tajaajilota Gurguddoo Muummichaa</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>1. Tajaajila Barnootaafi Leenjii</h3>
+                    <ul>
+                        <li><strong>Ogeeyyii fi Barsiisotaa:</strong> Barattoota sadarkaa digirii jalqabaan (BA) simachuun ogummaa barsiisummaa, gaazexeessummaa fi afaaniin ogeeyyii gahumsa qaban leenjisee eebbisiisuu.</li>
+                        <li><strong>Sagantaalee Addaddaatiin:</strong> Regular, Distance, Extension & Summer (barattoota hojii irra jiran ykn barachuu barbaadaniif).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>2. Tajaajila Qorannoofi Qo'annoo</h3>
+                    <ul>
+                        <li><strong>Afaan, Ogbarruu fi Aadaa:</strong> Seenaa, duudhaa, afaanota naannichaa fi ogbarruu Oromoo qorachuun barreeffamaan galmeessuu.</li>
+                        <li><strong>Kuus-qabeenya (Documentation):</strong> Jechoota, mammaaksa, hibboo, weedduu aadaa fi ogafaan uummataa funaanuu.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>3. Tajaajila Hawaasaa</h3>
+                    <ul>
+                        <li><strong>Deeggarsa Ogummaa:</strong> Hawaasa naannichaa, dhaabbilee mootummaafi miti-mootummaa waliin ta'uun dhimmoota afaan Oromoo fi qunnamtii irratti deeggarsa kennuu.</li>
+                        <li><strong>Gorsaa fi Leenjii Gabaabaa:</strong> Ogeeyyii miidiyaa, barreessitootaafi qaamolee dhimmi ilaallatuuf leenjiiwwan kennuu.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>4. Tajaajila Qunnamtiifi Miidiyaa</h3>
+                    <ul>
+                        <li><strong>Guddina Ogummaa Qunnamtii:</strong> Sirna qunnamtii hawaasummaa fooyyessuu fi damee gaazexessummaa fi qunnamtii uummatiin ogeeyyii horachuu.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sagantaafi Ulaagaa Seensaa -->
+    <section id="academics" class="content-section">
+        <div class="section-container">
+            <h2>Sagantaafi Ulaagaa Seensaa (BA Program)</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Ulaagaa Seensaa (Admission Requirements)</h3>
+                    <ul>
+                        <li><strong>Qabxii Qormaata Biyyaalessaa:</strong> Qormaata seensa yuunivarsiitii ykn qabxii darbiinsaa Ministiraa Barnootaan murtaa'u guutuu.</li>
+                        <li><strong>Fedhii fi Filannoo:</strong> Dhuunfaan Afaan Oromoo, Ogbarruufi Qunnamtii filachuun dursa kennuu ykn ramaddii ministeeraan dhufuu.</li>
+                        <li><strong>Beekumsa Bu'uuraa:</strong> Afaan Oromoo dubbachuu, dubbisuufi barreessuu irratti dandeettii gaarii qabaachuu (akka afaan lammaffaatti barachuufis ni danda'ama).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Koorsiiwwan Barumsaa (Course Modules)</h3>
+                    <ul>
+                        <li><strong>Afaan Oromoo fi Caas-luga:</strong> Phonology, morphology, syntax, hiika jechootaafi seera barreessaa.</li>
+                        <li><strong>Ogbarruu Afaan Oromoo:</strong> Fookloorii, walaloo, diraamaa/tiyaatiraafi kalaqaa ogbarruu ammayyaa.</li>
+                        <li><strong>Qunnamtiifi Gaazexummaa:</strong> Qunnamtii uummatichaa, seera miidiyaa, fi dandeettii gabaasuu (Journalism).</li>
+                        <li><strong>Qorannoo Afaanii fi Barsiisummaa:</strong> Research methods, thesis, fi mala barsiisa afaanichaa (Pedagogy).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carraa Hojii fi Mul'ata Tarsiimoo -->
+    <section id="careers" class="content-section">
+        <div class="section-container">
+            <h2>Eebbifamtootaaf Carraa Hojii fi Mul'ata Muummichaa</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Dameewwan Hojii</h3>
+                    <ul>
+                        <li><strong>Barsiisummaafi Barnoota:</strong> Barsiisaa mana barumsaa 1ffaa/2ffaa ykn Leenjisaa/Qorataa yuunivarsiitiitti.</li>
+                        <li><strong>Miidiyaafi PR:</strong> Gaazexessaa raadiyoo, televiziyoonaa, gaazexaa, ykn Ogeessa Qunnamtii Uummataa.</li>
+                        <li><strong>Qorannoofi Gulaalli:</strong> Qorataa aadaafi afaanii, Gulaalaa barreeffamaa (Editor/Proofreader).</li>
+                        <li><strong>Kalaqaa fi Hiika Afaanii:</strong> Barreessaa kitaabaa, taphoota tiyaatiraa fi Hayyuu Hiika Afaanii (Translator).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Mul'ata (Vision) & Karoora Tarsiimoo</h3>
+                    <ul>
+                        <li><strong>Giddu-gala Qorannoo:</strong> Sadarkaa biyyoolesaatti giddu-gala qorannoo afaan Oromoo, aadaa, ogbarruu fi qunnamtii ta'uun beekamuu.</li>
+                        <li><strong>Babal'ina Sagantaa:</strong> Fuulduratti sagantaa digirii lammafaa (Master’s - MA) fi doktoraa (PhD) banuu.</li>
+                        <li><strong>Kuus-qabeenya Dijitaalaa:</strong> Qorannoowwan fookloorii fi aadaa dijitaalaan qindeessuu.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kutaa Galmee Barattoota Haaraa (Registration Section) -->
+    <section id="register" class="register-section">
+        <div class="register-container">
+            <h2>Foormii Galmee Barattoota Haaraa</h2>
+            <p>Barattoonni bara barnootaa haaraatiif galmaa'uu barbaaddan foormii kana guutaa.</p>
+            
+            <form class="register-form" onsubmit="handleRegistration(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Maqaa Guutuu:</label>
+                        <input type="text" id="fullName" placeholder="Fkn: Gammachuu Taasisaa Boruu" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Saala:</label>
+                        <select id="gender" required>
+                            <option value="">Filadhaa</option>
+                            <option value="Dhiira">Dhiira</option>
+                            <option value="Dhalaa">Dhalaa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Imeelii:</label>
+                        <input type="email" id="email" placeholder="abrihamtono@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Lakkoofsa Bilbilaa:</label>
+                        <input type="tel" id="phone" placeholder="+251 9..." required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="program">Sagantaa Barnootaa:</label>
+                        <select id="program" required>
+                            <option value="">Sagantaa Filadhaa</option>
+                            <option value="Digirii Jalqabaa (Regular)">Digirii Jalqabaa (Regular)</option>
+                            <option value="Digirii Jalqabaa (Extension/Distance)">Digirii Jalqabaa (Extension / Distance/Weekend)</option>
+                            <option value="Digirii Lammaffaa (MA)">Digirii Lammaffaa (Master's - MA)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit">Galmaa'i</button>
+            </form>
+            
+            <!-- Ergaa Milkaa'inaa fi ID Barataa Itti Agarsiisu -->
+            <div id="reg-success-msg" style="display: none; margin-top: 25px; padding: 20px; background: #e8f5e9; color: #1b4d3e; border: 1px solid #c8e6c9; border-radius: 8px; text-align: center;">
+                <h3 style="margin-bottom: 10px; color: #2e7d32;">Galmeen Keessan Milkaa'eera!</h3>
+                <p id="success-text" style="margin-bottom: 15px;"></p>
+                <div style="background: white; padding: 12px; border: 2px dashed #2e7d32; border-radius: 6px; display: inline-block;">
+                    <strong>Lakkoofsa Galmee (Student ID) Keessan:</strong> <span id="generated-id" style="color: #c62828; font-size: 1.2rem; font-weight: bold;"></span>
+                </div>
+                <p style="font-size: 0.85rem; color: #666; margin-top: 12px;">* Lakkoofsa ID kana qabachuun fuula gadii "Qabxii" jedhu irraa qabxii keessan ilaaluu dandeessu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kutaa Admin Dashboard (Bulchaa Qofaaf) -->
+    <section id="admin" class="admin-section">
+        <div class="admin-container">
+            <h2 style="color: #1b4d3e; margin-bottom: 10px; text-align: center;">Galmee Barattootaa (Admin Panel)</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">Iccitii bulchaa galchuun barattoota galmaa'an ilaali.</p>
+            
+            <!-- Login Box -->
+            <div id="admin-login-box" class="admin-login-box">
+                <input type="password" id="adminPassword" placeholder="Jecha Iccitii Admin Galchaa">
+                <button onclick="loginAdmin()">Seeni</button>
+                <p id="admin-error" style="color: red; font-size: 0.9rem; margin-top: 10px; display: none;">Jechi iccitii dogoggora!</p>
+            </div>
+
+            <!-- Admin Panel Data Table -->
+            <div id="admin-panel">
+                <h3 style="color: #1b4d3e; margin-bottom: 15px;">Barattoota Haaraa Galmaa'an Hunda</h3>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lakkoofsa ID</th>
+                                <th>Maqaa Guutuu</th>
+                                <th>Saala</th>
+                                <th>Imeelii</th>
+                                <th>Bilbila</th>
+                                <th>Sagantaa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-table-body">
+                            <!-- Data barattootaa asitti dabalama -->
+                        </tbody>
+                    </table>
+                </div>
+                <button onclick="logoutAdmin()" style="margin-top: 20px; background-color: #c62828; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Ba'i (Logout)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kutaa Sirna Qabxii Barattootaa (Student Grade Portal) -->
+    <section id="portal" class="portal-section">
+        <div class="portal-container">
+            <h2 style="color: #1b4d3e; margin-bottom: 10px;">Sirna Qabxii Barattootaa</h2>
+            <p style="color: #666; margin-bottom: 25px;">Lakkoofsa Galmee (ID) keessan galchuudhaan qabxii semisteera kanaa ilaalladhaa.</p>
+            
+            <div class="portal-form">
+                <input type="text" id="studentId" placeholder="Fkn: BDU/1001/18 ykn ID keessan galchaa" required>
+                <button onclick="checkGrade()">Qabxii Ilaali</button>
+            </div>
+
+            <div id="result-box">
+                <h4 id="res-name" style="color: #1b4d3e; margin-bottom: 5px;"></h4>
+                <p id="res-id" style="margin-bottom: 5px;"></p>
+                <p id="res-status" style="font-weight: bold;"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kutaa Qunnamtii (Contact Us) -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2>Nu Qunnamaa</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">Gaaffii ykn odeeffannoo dabalataaf nu qunnamuu dandeessu.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="color: #1b4d3e; margin-bottom: 15px;">Teessoo Ofisiichaa</h3>
+                    <p style="margin-bottom: 10px;"><strong>Yuunivarsiitii:</strong> Yuunivarsiitii Baahir Daar</p>
+                    <p style="margin-bottom: 10px;"><strong>Muummee:</strong> Muummee Afaan Oromoo, Ogbarruufi Qunnamtii</p>
+                    <p style="margin-bottom: 10px;"><strong>Bilbila:</strong> +251 910213495 / +251913645889 / 0910802183</p>
+                    <p style="margin-bottom: 10px;"><strong>Imeelii:</strong> info@bdu.edu.et</p>
+                    <p style="margin-bottom: 10px;"><strong>Sa'aatii Hojii:</strong> Wiixata - Jimaata (2:00 - 11:00)</p>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="color: #1b4d3e; margin-bottom: 15px;">Ergaa Dabarsaa</h3>
+                    <form>
+                        <input type="text" placeholder="Maqaa Keessan" required>
+                        <input type="email" placeholder="Imeelii Keessan" required>
+                        <textarea rows="4" placeholder="Ergaa Keessan Barreessaa..." required></textarea>
+                        <button type="submit">Ergaa Ergi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuul-duree Xumuraa (Footer) -->
+    <footer>
+        <p>&copy; 2026 Muummee Afaan Oromoo, Ogbarruufi Qunnamtii - BDU. Mirgi Abbummaa seeraan eegamaadha. Abraham Tono Bati</p>
+    </footer>
+
+    <!-- JavaScript code for registration, ID generation and grade checking -->
+    <script>
+        let registeredStudents = JSON.parse(localStorage.getItem('bduStudentsList')) || [];
+        let studentGrades = JSON.parse(localStorage.getItem('bduStudentGrades')) || {
+            "001": { name: "Obbo / Aadde Gammachuu Tasisaa", status: "Qabxii: A (Gahumsa olaanaa - 3.85 GPA)" },
+            "002": { name: "Obbo / Aadde Ayantuu Tolasaa", status: "Qabxii: B+ (Gahumsa gaarii - 3.40 GPA)" },
+            "003": { name: "Obbo / Aadde Dabalaa Boruu", status: "Qabxii: A- (Gahumsa gaarii - 3.60 GPA)" }
+        };
+
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const gender = document.getElementById('gender').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const program = document.getElementById('program').value;
+
+            // Lakkoofsa ID ofumaan uumuu (Fkn: BDU/1045/18)
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            const studentId = "BDU/" + randomNum + "/18";
+
+            const newStudent = { studentId, name, gender, email, phone, program };
+            registeredStudents.push(newStudent);
+            
+            // Barataa haaraaf qabxii jalqabaa (Default) qopheessuu akka qabxii ilaalu danda'uuf
+            studentGrades[studentId] = { 
+                name: name, 
+                status: "Qabxii Semisteera Jalqabaa: Haaraa Galmaa'e (Gahumsa eeggachaa jira)" 
+            };
+
+            localStorage.setItem('bduStudentsList', JSON.stringify(registeredStudents));
+            localStorage.setItem('bduStudentGrades', JSON.stringify(studentGrades));
+
+            // Ergaa fi ID uumame barataaf agarsiisuu
+            const successBox = document.getElementById('reg-success-msg');
+            const successText = document.getElementById('success-text');
+            const generatedIdSpan = document.getElementById('generated-id');
+
+            successBox.style.display = "block";
+            successText.innerText = "Galatoomaa " + name + "! Galmeen keessan milkaa'inaan simatameera.";
+            generatedIdSpan.innerText = studentId;
+            
+            event.target.reset();
+        }
+
+        function loginAdmin() {
+            const pass = document.getElementById('adminPassword').value;
+            const errorMsg = document.getElementById('admin-error');
+            const loginBox = document.getElementById('admin-login-box');
+            const adminPanel = document.getElementById('admin-panel');
+
+            if (pass === "admin123") {
+                loginBox.style.display = "none";
+                adminPanel.style.display = "block";
+                errorMsg.style.display = "none";
+                loadStudentTable();
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById('admin-login-box').style.display = "block";
+            document.getElementById('admin-panel').style.display = "none";
+            document.getElementById('adminPassword').value = "";
+        }
+
+        function loadStudentTable() {
+            const tableBody = document.getElementById('student-table-body');
+            tableBody.innerHTML = "";
+
+            if (registeredStudents.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #666;">Ammaf barataan galmaa'e hin jiru.</td></tr>`;
+                return;
+            }
+
+            registeredStudents.forEach((student) => {
+                const row = `<tr>
+                    <td><strong>${student.studentId}</strong></td>
+                    <td>${student.name}</td>
+                    <td>${student.gender}</td>
+                    <td>${student.email}</td>
+                    <td>${student.phone}</td>
+                    <td>${student.program}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function checkGrade() {
+            const idInput = document.getElementById('studentId').value.trim();
+            const resultBox = document.getElementById('result-box');
+            const resName = document.getElementById('res-name');
+            const resId = document.getElementById('res-id');
+            const resStatus = document.getElementById('res-status');
+
+            if (idInput === "") {
+                alert("Maaloo Lakkoofsa Galmee (ID) keessan galchaa!");
+                return;
+            }
+
+            resultBox.style.display = "block";
+
+            if (studentGrades[idInput]) {
+                resName.innerText = studentGrades[idInput].name;
+                resId.innerText = "Lakkoofsa ID: " + idInput;
+                resStatus.innerText = studentGrades[idInput].status;
+                resStatus.style.color = "#2e7d32";
+            } else {
+                resName.innerText = "Hin Argamne!";
+                resId.innerText = "ID: " + idInput;
+                resStatus.innerText = "Maaloo ID sirrii ta'e galchaa ykn Waajjira Qorannoofi Qabxii qunnamaa.";
+                resStatus.style.color = "#c62828";
+            }
+        }
+    </script>
+
+</body>
+</html>
